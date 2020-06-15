@@ -1,0 +1,12 @@
+steps:
+  - name: "gcr.io/cloud-builders/gcloud"
+    waitFor: ["-"]
+    args:
+      - functions
+      - deploy
+      - getNoonreportAPItoStorage
+      - --runtime=nodejs10
+      - --trigger-http
+      - --source=functions
+      - --region=europe-west1
+    id: "deploying-a-serverless-function"
